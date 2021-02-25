@@ -6,11 +6,16 @@ import {
   Switch,
 } from "react-router-dom";
 import Login from './components/Login/Login'
+import Dashboard from "./components/Dashboard/Dashboard";
 function App() {
   return (
-    <div className="App">
-      <Login/>
-    </div>
+   
+    <Router>
+    <Switch>
+      <Route exact path="/" component={Login} />
+      <Route exact path="/dashboard" component={Dashboard} />
+      </Switch>
+      </Router>
   );
 }
 
