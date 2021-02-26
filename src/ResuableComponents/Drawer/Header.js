@@ -25,6 +25,12 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
         width: 450,
+        transition: 'transform .2s', 
+        "&:hover": {
+            color:'#c1daee',
+            cursor:'pointer',
+            transform: 'scale(1.1)',
+       },
     },
     input: {
         margin: 'auto 8px',
@@ -39,9 +45,11 @@ const useStyles = makeStyles((theme) => ({
     forIcons:{
          height:'52px' ,
          width:'32px',
+         transition: 'transform .2s', 
          "&:hover": {
              color:'#c1daee',
-             cursor:'pointer'
+             cursor:'pointer',
+             transform: 'scale(1.2)',
         },
     }
 
@@ -49,6 +57,9 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = () => {
     const classes = useStyles();
+    const handleAlert = () => {
+        alert("Coming Soon")
+    }
     return (
         <div className = {classes.main} >
               <Paper component="form" className={classes.rootSearch}>
@@ -63,8 +74,8 @@ const Header = () => {
                 </Paper>
                 <div style ={{margin:'auto 0'}}>
                     <div style ={{display:'flex'}}>
-                        <SettingsOutlinedIcon className = {classes.forIcons} style ={{margin:'0 20px'}}/>
-                        <PowerSettingsNewOutlinedIcon className = {classes.forIcons}/>
+                        <SettingsOutlinedIcon onClick = {handleAlert} className = {classes.forIcons} style ={{margin:'0 20px'}}/>
+                        <PowerSettingsNewOutlinedIcon  className = {classes.forIcons}/>
                     </div>
                 </div>
         </div>

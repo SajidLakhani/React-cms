@@ -17,7 +17,7 @@ const SideBar = () => {
     return (
         <>
           <div className = {classes.main}>
-            <h2 style ={{margin:'0'}}>Dashboard</h2>
+            <h2 style ={{margin:'0', fontSize:'25px'}}>Dashboard</h2>
         </div>
             <List style ={{padding:'20px 20px'}}> 
             {['Dashboard', 'User/Roles', 'CNF', 'Stocklist', 'Orders', 'Reports', 'Attendance'

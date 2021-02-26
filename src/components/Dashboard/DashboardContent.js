@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
-const DashboardContent = () => {
+function DashboardContent() {
     return (
         <div>
-            Sajid
+            Dashboard
         </div>
-    );
-};
+    )
+}
 
-export default DashboardContent;
+export default DashboardContent

@@ -1,11 +1,11 @@
 import React from 'react'
 import Drawer from '../../ResuableComponents/Drawer/Drawer'
-function Dashboard() {
+function index() {
     return (
         <div>
-            <Drawer dashboard = 'true'/>
+            <Drawer/>
         </div>
     )
 }
 
-export default Dashboard
+export default index
