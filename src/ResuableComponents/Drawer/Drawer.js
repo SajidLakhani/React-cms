@@ -15,6 +15,7 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Header from './Header';
 import DashboardContent from '../../components/Dashboard/DashboardContent';
 import CreateUser from '../../components/CreateUser/CreateUser';
+import Footer from './Footer';
 
 const drawerWidth = 260;
 
@@ -74,6 +75,7 @@ function SideDrawer({dashboard}) {
   return (
     <div className={classes.root}>
       <CssBaseline />
+      
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <IconButton
@@ -89,6 +91,7 @@ function SideDrawer({dashboard}) {
           
         </Toolbar>
       </AppBar>
+      
       <nav className={classes.drawer} aria-label="mailbox folders">
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Hidden smUp implementation="css">
@@ -123,8 +126,10 @@ function SideDrawer({dashboard}) {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         {dashboard ? <DashboardContent/> : <CreateUser/>}
+        <Footer/>
         
       </main>
+   
     </div>
   );
 }
