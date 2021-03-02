@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
         padding:'60px 30px',
         width:'70%',
         margin:'auto 0',
+        fontFamily:'MyFirstFont',
         ['@media (max-width:740px)']: { 
             display:'none'
           },
@@ -65,6 +66,7 @@ const useStyles = makeStyles((theme) => ({
             width:'100%',
           },
         background: "#ffffff",
+        fontFamily:'MyFirstFont',
         marginTop: '10px',
         borderRadius: "5px",
         "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline" :{
@@ -88,10 +90,11 @@ const useStyles = makeStyles((theme) => ({
             padding: '10px 0',
             margin: 'auto 10px',
             fontSize: "14px",
-            fontFamily: 'inherit',
+            fontFamily:'MyFirstFont',
             textAlign: "left",
             "&::placeholder": {
                 color: "black",
+                fontFamily:'MyFirstFont',
                 margin: 'auto 0',
                 fontSize: "14px",
                 opacity: 1,

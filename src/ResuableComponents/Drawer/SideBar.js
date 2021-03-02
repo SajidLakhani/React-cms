@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 main:{
     backgroundColor: '#1f9de7',
     color: 'white',
-    padding:'20px 55px'
+    padding:'20px 55px',
 },
 forUl:{
   padding: '10px 40px',
@@ -49,7 +49,7 @@ midDiv:{
 const SideBar = () => {
     const classes = useStyles();
     return (
-        <>
+        <div style = {{ fontFamily:'MyFirstFont'}}>
           <div className = {classes.main}>
             <h2 style ={{margin:'0', fontSize:'25px'}}>Dashboard</h2>
         </div>
@@ -70,10 +70,12 @@ const SideBar = () => {
                 <CNF className = {classes.forImage}/>
                 <li className = {classes.forLi}>CNF</li>
               </div>
+              <Link style ={{textDecoration:'none', color:'inherit'}} to = '/stocklist'>
               <div className = {classes.midDiv}>
                 <StockList className = {classes.forImage}/>
                 <li className = {classes.forLi}>Stocklist</li>
               </div>
+              </Link>
               <div className = {classes.midDiv}>
                 <Orders className = {classes.forImage}/>
                 <li className = {classes.forLi}>Orders</li>
@@ -99,7 +101,7 @@ const SideBar = () => {
                 <li className = {classes.forLi}>Activities</li>
               </div>
           </ul>
-        </>
+        </div>
       
     );
 };

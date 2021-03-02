@@ -93,7 +93,14 @@ const CreateUserMobileView = () => {
     <TextField className={classes.mobilefield}  id="outlined-basic" placeholder =  "Mobile No" type = "number" variant="outlined" />
     { showResults ? <div>
   
-    { Teacher.title === 'MR' ? <TextField className={classes.mobilefield} id="outlined-basic" placeholder = "Allow Total Childs" type = "number" variant="outlined" />  :  null }
+    { Teacher.map((item)=> {
+        if(item.title != "MR"){
+            <TextField className={classes.mobilefield} id="outlined-basic" placeholder = "Allow Total Childs" type = "number" variant="outlined"  />
+        }
+        else {
+            <div>Sajid</div>
+        }
+        })}
     <TextField className={classes.mobilefield}  id="outlined-basic" placeholder = "Head Quarter HQ" variant="outlined" />
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <KeyboardDatePicker

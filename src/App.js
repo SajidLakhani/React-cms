@@ -8,14 +8,16 @@ import {
 import Login from './components/Login/Login'
 import Dashboard from "./components/Dashboard/Dashboard";
 import CreateUser from './components/CreateUser/index'
+import StockList from "./components/StockList/index";
 function App() {
   return (
    
     <Router>
     <Switch>
       <Route exact path="/" component={Login} />
-      <Route exact path="/dashboard" component={Dashboard} />
-      <Route exact path="/create-user" component={CreateUser} />
+      <Route  path="/dashboard" component={Dashboard} />
+      <Route  path="/create-user" component={CreateUser} />
+      <Route  path="/stocklist" component={StockList} />
       </Switch>
       </Router>
   );
