@@ -17,6 +17,7 @@ import DashboardContent from '../../components/Dashboard/DashboardContent';
 import CreateUser from '../../components/CreateUser/CreateUser';
 import Footer from './Footer';
 import StockList from '../../components/StockList/StockList';
+import AddMedicine from '../../components/Medicine/AddMedicine';
 
 const drawerWidth = 260;
 
@@ -58,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function SideDrawer({dashboard , stocklist}) {
+function SideDrawer({dashboard , stocklist , Addmedicine }) {
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -126,7 +127,7 @@ function SideDrawer({dashboard , stocklist}) {
       </nav>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        {dashboard ? <DashboardContent/> : stocklist ? <StockList/> : <CreateUser/>}
+        {dashboard ? <DashboardContent/> : stocklist ? <StockList/> : Addmedicine ? <AddMedicine/> :<CreateUser/>}
         <Footer/>
         
       </main>

@@ -1,6 +1,5 @@
 import React from 'react'
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import CreateUserMobileView from './CreateUserMobileView'
 import { makeStyles, TextField, Button } from '@material-ui/core'
 import 'date-fns';
 import DateFnsUtils from '@date-io/date-fns';
@@ -8,31 +7,19 @@ import {
     MuiPickersUtilsProvider,
     KeyboardDatePicker,
 } from '@material-ui/pickers';
-import { toast } from 'react-toastify';
+
 
 const useStyles = makeStyles((theme) => ({
-    forMobileMain:{
-        paddingTop:'30px',
-        paddingBottom:'60px',
-        width:'90%',
-        textAlign:'center',
-        margin:'auto',
-        [theme.breakpoints.up('sm')]: {
-            display:'none'
-        },
-    },
 
     main:{
         padding:'60px 30px',
         width:'70%',
         margin:'auto 0',
         fontFamily:'MyFirstFont',
-        ['@media (max-width:740px)']: { 
-            display:'none'
+        [theme.breakpoints.down('md')]: {
+            width:'100%',
           },
-          ['@media (max-width:780px)']: { 
-            width:'100%'
-          },
+         
     },
     root: {
         width: '100%',
@@ -55,6 +42,9 @@ const useStyles = makeStyles((theme) => ({
     },
 
     midDiv:{
+        [theme.breakpoints.down('sm')]: {
+            display:'block'
+          },
         display:'flex',
          margin:'10px 0',
          justifyContent:'space-between',
@@ -62,9 +52,13 @@ const useStyles = makeStyles((theme) => ({
     },
 
     field: {
-        [theme.breakpoints.down('md')]: {
-            width:'100%',
+        [theme.breakpoints.down('sm')]: {
+            width:'100% !important',
+            margin:'5px 0'
           },
+          "&::hover": {
+            borderColor: "white",
+        },
         background: "#ffffff",
         fontFamily:'MyFirstFont',
         marginTop: '10px',
@@ -105,14 +99,14 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-function CreateUser() {
+function AddMedicine() {
     const classes = useStyles();
-    const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
+    const [selectedDate, setSelectedDate] = React.useState(null);
     const [showResults, setShowResults] = React.useState(false)
 
     const onClick = () => setShowResults(true)
     const handleSubmit = () => {
-             alert('Registered Successfully');
+             alert('Medicine Added Successfully');
     }
 
     const handleDateChange = (date) => {
@@ -120,46 +114,37 @@ function CreateUser() {
     };
     return (
         <>
-          <div className = {classes.forMobileMain}>
-              <CreateUserMobileView/>
-          </div>
 <div className = {classes.main}>
-    <h2>ASM/RSM/MR Registeration</h2>
+    <h2>Add Medicine</h2>
     <div className = {classes.midDiv}>
-    <TextField disabled className={classes.field} style ={{width:'32%',backgroundColor:'#dfdfdf'}} id="outlined-basic" placeholder = "AC/ID" type = "number" variant="outlined" />
-    <TextField className={classes.field} style ={{width:'32%'}} id="outlined-basic" placeholder = "First Name" variant="outlined" />
-    <TextField className={classes.field} style ={{width:'32%'}} id="outlined-basic" placeholder = "Last Name" variant="outlined" />
-    </div>
-    <div className = {classes.midDiv}>
-    <TextField className={classes.field} style ={{width:'66%'}} id="outlined-basic" placeholder = "Address" variant="outlined" />
-    <TextField className={classes.field} style ={{width:'32%'}}  id="outlined-basic" placeholder =  "Mobile No" type = "number" variant="outlined" />
-    </div>
-    <div className = {classes.midDiv}>
+    <TextField  className={classes.field} style ={{width:'32%'}} id="outlined-basic" placeholder = "Medicine Name" type = "text" variant="outlined" />
     <Autocomplete
             id="combo-box-demo"
-            style ={{width:'47%'}}
-            options={Teacher}
+            style ={{width:'32%'}}
+            options={Unit}
             onChange={onClick}
             getOptionLabel={(option) => option.title}
             className={classes.field}
-            renderInput={(params) => <TextField {...params} placeholder= "Role" variant="outlined" />}
+            renderInput={(params) => <TextField {...params} placeholder= "Unit" variant="outlined" />}
         />
         <Autocomplete
             id="combo-box-demo"
-            style ={{width:'47%'}}
-            options={Parent}
+            style ={{width:'32%'}}
+            options={Category}
             getOptionLabel={(option) => option.title}
             className={classes.field}
-            renderInput={(params) => <TextField {...params} placeholder= "Select Parent" variant="outlined" />}
+            renderInput={(params) => <TextField {...params} placeholder= "Category" variant="outlined" />}
         />
     </div>
-    { showResults ? <div className = {classes.midDiv}>
-    <TextField className={classes.field} style = {{width:'32%'}} id="outlined-basic" placeholder = "Allow Total Childs" type = "number" variant="outlined" />
-    <TextField className={classes.field}  style = {{width:'32%'}} id="outlined-basic" placeholder = "Head Quarter HQ" variant="outlined" />
+    <div className = {classes.midDiv}>
+    <TextField className={classes.field} style ={{width:'32%'}} InputProps={{ inputProps: { min: 0, max: 10 } }} id="outlined-basic" placeholder = "GST" type = "number" min = "0" variant="outlined" />
+    <TextField className={classes.field} style ={{width:'66%'}} id="outlined-basic" placeholder =  "Batch ID" type = "number" variant="outlined" />
+    </div>
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <KeyboardDatePicker
-                style={{ border: '1px solid #CAC6D4',width:'32%' }}
+                style={{ border: '1px solid #CAC6D4',width:'100%' }}
                 disableToolbar
+                placeholder="Manufacture Date"
                 variant="inline"
                 format="MM/dd/yyyy"
                 margin="normal"
@@ -172,12 +157,40 @@ function CreateUser() {
                 }}
             />
             </MuiPickersUtilsProvider>
-    </div> : null }
-    
-    <div className = {classes.midDiv}>
-    <TextField className={classes.field} style = {{width:'32%'}} id="outlined-basic" placeholder = "Email Address" variant="outlined" />
-    <TextField className={classes.field}  style = {{width:'66%'}} id="outlined-basic" placeholder = "Password" type = "password" variant="outlined" />
+            <div className = {classes.midDiv}>
+            <Autocomplete
+            id="combo-box-demo"
+            style ={{width:'32%'}}
+            options={Category}
+            onChange={onClick}
+            getOptionLabel={(option) => option.title}
+            className={classes.field}
+            renderInput={(params) => <TextField {...params} placeholder= "Medicine Type" variant="outlined" />}
+        />
+    <TextField  className={classes.field} style ={{width:'32%'}} id="outlined-basic" placeholder = "Sell Price" type = "number" variant="outlined" />
+    <TextField className={classes.field} style ={{width:'32%'}} id="outlined-basic" placeholder = "M.R.P" variant="outlined" />
     </div>
+    <div className = {classes.midDiv}>
+    <TextField className={classes.field} style ={{width:'32%'}} id="outlined-basic" placeholder = "HSN" variant="outlined" />
+    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+            <KeyboardDatePicker
+                style={{ border: '1px solid #CAC6D4',width:'66%' }}
+                disableToolbar
+                placeholder="Expiry Date"
+                variant="inline"
+                format="MM/dd/yyyy"
+                margin="normal"
+                id="date-picker-inline"
+                className={classes.field}
+                value={selectedDate}
+                onChange={handleDateChange}
+                KeyboardButtonProps={{
+                    'Joining Date': 'change date',
+                }}
+            />
+            </MuiPickersUtilsProvider>
+    </div>
+   
     <div style ={{display : 'flex', justifyContent:'flex-end'}}>
         <Button className={classes.button} style ={{backgroundColor:'#252525'}}>Cancel</Button>
         <Button className={classes.button} style ={{marginLeft:'10px',background:'#1f9de7'}} onClick = {handleSubmit}>Submit</Button>
@@ -188,16 +201,20 @@ function CreateUser() {
       
     )
 }
-const Teacher = [
-    { title: 'ASM' },
-    { title: 'RSM' },
-    { title: 'MR' },
+const Unit = [
+    { title: 'Bottle' },
+    { title: 'Box' },
+    { title: 'Tab' },
+    { title: 'Syrup' },
+    { title: 'Cap' },
+    { title: 'Injection' },
 
 ];
-const Parent = [
-    { title: 'Super Admin' },
-    { title: 'ASM' },
-    { title: 'RSM' },
+const Category = [
+    { title: 'Capsules' },
+    { title: 'Drops' },
+    { title: 'Syrup' },
+    { title: 'Tablets' },
 
 ];
-export default CreateUser
+export default AddMedicine

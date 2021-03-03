@@ -76,6 +76,12 @@ const SideBar = () => {
                 <li className = {classes.forLi}>Stocklist</li>
               </div>
               </Link>
+              <Link style ={{textDecoration:'none', color:'inherit', }} to = '/add-medicine'>
+              <div className = {classes.midDiv}>
+                <Dashboard className = {classes.forImage}/>
+                <li className = {classes.forLi}>Medicine</li>
+              </div>
+              </Link>
               <div className = {classes.midDiv}>
                 <Orders className = {classes.forImage}/>
                 <li className = {classes.forLi}>Orders</li>
