@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 main:{
     backgroundColor: '#1f9de7',
     color: 'white',
-    padding:'20px 55px',
+    padding:'14px 55px',
 },
 forUl:{
   padding: '10px 40px',
@@ -76,12 +76,16 @@ const SideBar = () => {
                 <li className = {classes.forLi}>Stocklist</li>
               </div>
               </Link>
-              <Link style ={{textDecoration:'none', color:'inherit', }} to = '/add-medicine'>
+              
               <div className = {classes.midDiv}>
                 <Dashboard className = {classes.forImage}/>
                 <li className = {classes.forLi}>Medicine</li>
-              </div>
-              </Link>
+                </div> <ul style ={{ listStyleType: 'none', fontFamily:'inherit'}}>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/med-category'> <li style={{padding:'5px 0'}} >Category</li> </Link>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/add-medicine'> <li style={{padding:'5px 0'}} >Add Medicine</li> </Link>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/manage-med'> <li style={{padding:'5px 0'}} >Manage Medicine</li></Link>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/unit'><li style={{padding:'5px 0'}} >Unit</li></Link>
+                </ul>
               <div className = {classes.midDiv}>
                 <Orders className = {classes.forImage}/>
                 <li className = {classes.forLi}>Orders</li>

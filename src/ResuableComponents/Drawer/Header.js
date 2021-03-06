@@ -8,7 +8,7 @@ import PowerSettingsNewOutlinedIcon from '@material-ui/icons/PowerSettingsNewOut
 const useStyles = makeStyles((theme) => ({
     main:{
         width:'100%',
-        padding:'9px 0',
+        
         display:'flex',
         justifyContent:'space-between',
         ['@media (max-width:740px)']: { 

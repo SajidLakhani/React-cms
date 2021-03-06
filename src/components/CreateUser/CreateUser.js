@@ -124,7 +124,7 @@ function CreateUser() {
               <CreateUserMobileView/>
           </div>
 <div className = {classes.main}>
-    <h2>ASM/RSM/MR Registeration</h2>
+    <h1>ASM/RSM/MR Registeration</h1>
     <div className = {classes.midDiv}>
     <TextField disabled className={classes.field} style ={{width:'32%',backgroundColor:'#dfdfdf'}} id="outlined-basic" placeholder = "AC/ID" type = "number" variant="outlined" />
     <TextField className={classes.field} style ={{width:'32%'}} id="outlined-basic" placeholder = "First Name" variant="outlined" />

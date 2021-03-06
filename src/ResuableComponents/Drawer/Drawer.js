@@ -18,6 +18,9 @@ import CreateUser from '../../components/CreateUser/CreateUser';
 import Footer from './Footer';
 import StockList from '../../components/StockList/StockList';
 import AddMedicine from '../../components/Medicine/AddMedicine';
+import UnitTable from '../../components/Unit/UnitTable';
+import MedicineCategory from '../../components/Medicine/MedicineCategory/MedicineCategory';
+import ManageMedicine from '../../components/Medicine/ManageMedicine/ManageMedicine';
 
 const drawerWidth = 260;
 
@@ -59,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function SideDrawer({dashboard , stocklist , Addmedicine }) {
+function SideDrawer({dashboard , stocklist , Addmedicine, unit, medCategory, manageMed }) {
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -127,7 +130,7 @@ function SideDrawer({dashboard , stocklist , Addmedicine }) {
       </nav>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        {dashboard ? <DashboardContent/> : stocklist ? <StockList/> : Addmedicine ? <AddMedicine/> :<CreateUser/>}
+        {dashboard ? <DashboardContent/> : stocklist ? <StockList/> : Addmedicine ? <AddMedicine/> : unit ? <UnitTable/> : medCategory ? <MedicineCategory/> : manageMed ? <ManageMedicine/> : <CreateUser/>}
         <Footer/>
         
       </main>

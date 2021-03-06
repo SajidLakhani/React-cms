@@ -65,55 +65,55 @@ function DashboardContent() {
     const classes = useStyles();
     return (
         <div className = {classes.Main}>
-            <h2>Dashboard</h2>
+            <h1>Dashboard</h1>
             <div className = {classes.midDiv}>
                
             <Card className = {classes.firstRowCard}>
                 <img className = {classes.forImg} src = {AddUser}/>
-                <h6 style ={{margin:'auto'}}>Create New Account</h6>
+                <p style ={{margin:'auto'}}>Create New Account</p>
             </Card>
             
             <Card className = {classes.firstRowCard}>
             <img className = {classes.forImg} src = {Invoice}/>
-                <h6 style ={{margin:'auto'}}>Generate New Invoice</h6>
+                <p style ={{margin:'auto'}}>Generate New Invoice</p>
             </Card>
             <Card className = {classes.firstRowCard}>
             <img className = {classes.forImg} src = {Stock}/>
-                <h6 style ={{margin:'auto'}}>Stock Management</h6>
+                <p style ={{margin:'auto'}}>Stock Management</p>
             </Card>
             </div>
             <div className = {classes.midDiv}>
             <Card className = {classes.firstRowCard}>
             <img className = {classes.forImg} src = {List}/>
-                <h6 style ={{margin:'auto'}}>Stock List Mangement</h6>
+                <p style ={{margin:'auto'}}>Stock List Mangement</p>
             </Card>
             <Card className = {classes.firstRowCard}>
             <img className = {classes.forImg} src = {Cmanagement}/>
-                <h6 style ={{margin:'auto'}}>CNF Management</h6>
+                <p style ={{margin:'auto'}}>CNF Management</p>
             </Card>
             <Card className = {classes.firstRowCard}>
             <img className = {classes.forImg} src = {Payment}/>
-                <h6 style ={{margin:'auto'}}>Payment Settings</h6>
+                <p style ={{margin:'auto'}}>Payment Settings</p>
             </Card>
             </div>
             <div className = {classes.midDiv}>
             <Card className = {classes.firstRowCard} style ={{width:'65%'}}>
             <img className = {classes.forImg} src = {Employee} style ={{width:'20%'}} />
-                <h6 style ={{margin:'auto'}}>Employee Reports</h6>
+                <p style ={{margin:'auto'}}>Employee Reports</p>
             </Card>
             <Card className = {classes.firstRowCard}>
             <img className = {classes.forImg} src = {Orders}/>
-                <h6 style ={{margin:'auto'}}>Orders</h6>
+                <p style ={{margin:'auto'}}>Orders</p>
             </Card>
             </div>
             <div className = {classes.midDiv}>
             <Card className = {classes.firstRowCard} style ={{width:'48%'}}>
             <img className = {classes.forImg} src = {Track} style ={{width:'20%'}}/>
-                <h6 style ={{margin:'auto'}}>Track Location</h6>
+                <p style ={{margin:'auto'}}>Track Location</p>
             </Card>
             <Card className = {classes.firstRowCard} style ={{width:'48%'}}>
             <img className = {classes.forImg} src = {Message} style ={{width:'20%'}}/>
-                <h6 style ={{margin:'auto'}}>Send Message</h6>
+                <p style ={{margin:'auto'}}>Send Message</p>
             </Card>
             </div>
             

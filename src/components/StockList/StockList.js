@@ -1,6 +1,7 @@
 import { Card, makeStyles, TextField } from '@material-ui/core';
 import React from 'react';
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
+import Buttons from '../../ResuableComponents/Buttons/Buttons';
 const useStyles = makeStyles((theme) => ({
     main:{
         padding:'30px 30px',
@@ -75,7 +76,7 @@ const StockList = () => {
  const classes = useStyles();
     return (
         <div className = {classes.main}>
-            <h2>Add Stocklist</h2>
+            <h1>Add Stocklist</h1>
             <div className = {classes.midDiv}>
             <TextField className={`${classes.field} ${classes.forWidth}`} id="outlined-basic" placeholder = "Firm Name" type = "text" variant="outlined" />
             <TextField className={classes.field} style ={{width:'66%'}} id="outlined-basic" placeholder = "Address" type = "text" variant="outlined" />
@@ -155,6 +156,8 @@ const StockList = () => {
       style ={{width:'100%', height:'200px', padding:'10px'}}
       className={classes.field}
     />
+
+    <Buttons/>
         </div>
     );
 };

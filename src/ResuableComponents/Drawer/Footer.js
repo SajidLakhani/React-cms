@@ -14,8 +14,8 @@ const useStyles = makeStyles((theme) => ({
         bottom: '0',
         background: '#000000cf',
         ['@media (max-width:740px)']: { 
-            bottom: 'unset',
-            position: 'absolute',
+            bottom: '0',
+            position: 'fixed',
           },
     },
 

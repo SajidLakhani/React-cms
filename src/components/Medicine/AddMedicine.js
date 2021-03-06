@@ -7,6 +7,7 @@ import {
     MuiPickersUtilsProvider,
     KeyboardDatePicker,
 } from '@material-ui/pickers';
+import Buttons from '../../ResuableComponents/Buttons/Buttons';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -115,7 +116,7 @@ function AddMedicine() {
     return (
         <>
 <div className = {classes.main}>
-    <h2>Add Medicine</h2>
+    <h1>Add Medicine</h1>
     <div className = {classes.midDiv}>
     <TextField  className={classes.field} style ={{width:'32%'}} id="outlined-basic" placeholder = "Medicine Name" type = "text" variant="outlined" />
     <Autocomplete
@@ -137,8 +138,8 @@ function AddMedicine() {
         />
     </div>
     <div className = {classes.midDiv}>
-    <TextField className={classes.field} style ={{width:'32%'}} InputProps={{ inputProps: { min: 0, max: 10 } }} id="outlined-basic" placeholder = "GST" type = "number" min = "0" variant="outlined" />
-    <TextField className={classes.field} style ={{width:'66%'}} id="outlined-basic" placeholder =  "Batch ID" type = "number" variant="outlined" />
+    <TextField className={classes.field} style ={{width:'32%'}} InputProps={{ inputProps: { min: 0 } }} id="outlined-basic" placeholder = "GST" type = "number" min = "0" variant="outlined" />
+    <TextField className={classes.field} style ={{width:'66%'}} InputProps={{ inputProps: { min: 0 } }} id="outlined-basic" placeholder =  "Batch ID" type = "number" variant="outlined" />
     </div>
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <KeyboardDatePicker
@@ -163,11 +164,12 @@ function AddMedicine() {
             style ={{width:'32%'}}
             options={Category}
             onChange={onClick}
-            getOptionLabel={(option) => option.title}
+            getOptionLabel={(option) => option.title
+            }
             className={classes.field}
             renderInput={(params) => <TextField {...params} placeholder= "Medicine Type" variant="outlined" />}
         />
-    <TextField  className={classes.field} style ={{width:'32%'}} id="outlined-basic" placeholder = "Sell Price" type = "number" variant="outlined" />
+    <TextField  className={classes.field} style ={{width:'32%'}} id="outlined-basic" InputProps={{ inputProps: { min: 0 } }} placeholder = "Sell Price" type = "number" variant="outlined" />
     <TextField className={classes.field} style ={{width:'32%'}} id="outlined-basic" placeholder = "M.R.P" variant="outlined" />
     </div>
     <div className = {classes.midDiv}>
@@ -190,11 +192,7 @@ function AddMedicine() {
             />
             </MuiPickersUtilsProvider>
     </div>
-   
-    <div style ={{display : 'flex', justifyContent:'flex-end'}}>
-        <Button className={classes.button} style ={{backgroundColor:'#252525'}}>Cancel</Button>
-        <Button className={classes.button} style ={{marginLeft:'10px',background:'#1f9de7'}} onClick = {handleSubmit}>Submit</Button>
-        </div>
+    <Buttons/>
      
 </div>
 </>
