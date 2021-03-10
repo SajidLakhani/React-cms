@@ -1,12 +1,21 @@
 import {  Card, makeStyles, TextField } from '@material-ui/core';
-import React from 'react';
+import React, {useState} from 'react';
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
 import Buttons from '../../ResuableComponents/Buttons/Buttons';
 const useStyles = makeStyles((theme) => ({
   Tablemain:{
+    [theme.breakpoints.down('sm')]: {
+        width:'150%'
+      },
     width:'100%',
     margin:'auto'
+  },
+  forCard:{
+    padding:'20px 20px', margin:'30px 0',
+    [theme.breakpoints.down('sm')]: {
+        overflowX:'scroll'
+      },
   },
   innerDiv:{
     border:'1px solid #e4e5e7',
@@ -81,31 +90,26 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const UnitTable = () => {
-  const data = [
+  const[data , setData] = useState(null)
+  const[print , setPrint] = useState(false)
+  const handleValue = (event) =>{
+    setData(event.target.value)
+    setPrint(false)
+  }
+  const Arraydata = [
     {
-      name:'Bottles'
-    },
-    {
-      name:'Tablets'
-    },
-
-    {
-      name:'Capsul'
-    },
-
-    {
-      name:'Stripes'
-    },
-    {
-      name:'Syrups'
-    },
+      name:`${data}`
+    }
   ]
   const classes = useStyles();
-
+  const handleSubmit = () => {
+    setPrint(true)
+}
   const handleEdit = () => {
     alert("Successfully Edited")
   }
   const handleDelete = () => {
+    setPrint(false)
     alert("Successfully Deleted")
   }
   return (
@@ -114,12 +118,12 @@ const UnitTable = () => {
       <Card style ={{padding:'20px 20px', margin:'30px 0'}}>
         <h2 style ={{margin:'10px 0'}}>Add Unit</h2>
         <div>
-        <TextField  className={classes.field} id="outlined-basic" placeholder = "Unit Name" type = "text" variant="outlined" />
-        <Buttons/>
+        <TextField  className={classes.field} id="outlined-basic" placeholder = "Unit Name" type = "text" variant="outlined" onChange = {handleValue} />
+        <Buttons handleSubmit = {handleSubmit} />
         </div>
         
       </Card>
-      <Card style ={{padding:'20px 20px', margin:'30px 0'}}>
+      {!print ? null :   <Card className = {classes.forCard}>
         <h2 style ={{margin:'10px 0'}}>Unit List</h2>
       <div className = {classes.Tablemain}>
        <div className = {classes.innerDiv}>
@@ -127,7 +131,8 @@ const UnitTable = () => {
          <h3 className={classes.forText}>Unit Name</h3>
          <h3  className={classes.forText}>Actions</h3>
          </div>
-         {data.map((item)=>(
+         {Arraydata.map((item)=>(
+         
             <div className = {classes.forAll}>
             <p className={classes.forText} >{item.name}</p>
             <div className={classes.forText} style ={{display:'flex'}}>
@@ -135,11 +140,12 @@ const UnitTable = () => {
               <DeleteOutlineOutlinedIcon onClick = {handleDelete}  style ={{cursor:'pointer'}}/>
             </div>
             </div>
-         ))}
+          ))} 
         
         </div>        
     </div>
-      </Card>
+      </Card>}
+    
       
     </div>
    

@@ -69,6 +69,10 @@ const useStyles = makeStyles((theme) => ({
         fontFamily:'MyFirstFont',
         marginTop: '10px',
         borderRadius: "5px",
+        "& :-webkit-autofill": {
+            WebkitBoxShadow: '0 0 0 1000px white inset',
+           
+        },
         "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline" :{
             borderColor: '#1f9de7'
         },

@@ -4,10 +4,19 @@ import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
 
 const useStyles = makeStyles((theme) => ({
-  Tablemain:{
-    width:'100%',
-    margin:'auto'
-  },
+    Tablemain:{
+        [theme.breakpoints.down('sm')]: {
+            width:'150%'
+          },
+        width:'100%',
+        margin:'auto'
+      },
+      forCard:{
+        padding:'20px 20px', margin:'30px 0',
+        [theme.breakpoints.down('sm')]: {
+            overflowX:'scroll'
+          },
+      },
   innerDiv:{
     border:'1px solid #e4e5e7',
   },
@@ -92,7 +101,7 @@ const ManageMedicine = () => {
     <div style ={{padding:'40px 20px', fontFamily:'MyFirstFont'}}>
       <h1 style ={{margin:'5px 0'}}>Manage Medicine</h1>
      
-      <Card style ={{padding:'20px 20px', margin:'30px 0'}}>
+      <Card className = {classes.forCard}>
         <h2 style ={{margin:'10px 0'}}>Manage Medicine List</h2>
       <div className = {classes.Tablemain}>
        <div className = {classes.innerDiv}>

@@ -44,52 +44,23 @@ const useStyles = makeStyles((theme) => ({
 
 }))
 
-const MedicineCategory = () => {
+const StockReturn = () => {
   const data = [
     {
-      name:'Bottles',
-      id:'1'
+     no:'2',
+     id:'124215',
+     name:'Abmec Pharma',
+     date:'2-12-2020',
+     amount:'200'
     },
     {
-      name:'Tablets',
-      id:'2'
-    },
-
-    {
-      name:'Capsul',
-      id:'3'
-    },
-
-    {
-      name:'Stripes',
-      id:'4'
-    },
-    {
-      name:'Syrups',
-      id:'5'
-    },
-    {
-        name:'Bottles',
-        id:'1'
-      },
-      {
-        name:'Tablets',
-        id:'2'
-      },
-  
-      {
-        name:'Capsul',
-        id:'3'
-      },
-  
-      {
-        name:'Stripes',
-        id:'4'
-      },
-      {
-        name:'Syrups',
-        id:'5'
-      },
+        no:'2',
+        id:'124215',
+        name:'Abmec Pharma',
+        date:'2-12-2020',
+        amount:'200'
+       },
+             
   ]
   const classes = useStyles();
 
@@ -101,21 +72,27 @@ const MedicineCategory = () => {
   }
   return (
     <div style ={{padding:'40px 20px', fontFamily:'MyFirstFont'}}>
-      <h1 style ={{margin:'5px 0'}}>Category</h1>
+      <h1 style ={{margin:'5px 0'}}>Stock Return</h1>
      
       <Card className = {classes.forCard}>
-        <h2 style ={{margin:'10px 0'}}>Category List</h2>
+        <h2 style ={{margin:'10px 0'}}>Stock Return List</h2>
       <div className = {classes.Tablemain}>
        <div className = {classes.innerDiv}>
          <div className = {classes.forHeadings}>
-         <h3 className={classes.forText}>Category ID</h3>
-         <h3 className={classes.forText}>Category Name</h3>
+         <h3 className={classes.forText}>S.No</h3>
+         <h3 className={classes.forText}>Purchase ID</h3>
+         <h3 className={classes.forText}>Manufaturer Name</h3>
+         <h3 className={classes.forText}>Date</h3>
+         <h3 className={classes.forText}>Total Amount</h3>
          <h3  className={classes.forText}>Actions</h3>
          </div>
          {data.map((item)=>(
             <div className = {classes.forAll}>
-                <p className={classes.forText} >{item.id}</p>
+                <p className={classes.forText} >{item.no}</p>
+            <p className={classes.forText} >{item.id}</p>
             <p className={classes.forText} >{item.name}</p>
+            <p className={classes.forText} >{item.date}</p>
+            <p className={classes.forText} >{item.amount}</p>
             <div className={classes.forText} style ={{display:'flex'}}>
               <EditOutlinedIcon onClick = {handleEdit} style ={{cursor:'pointer'}}/>
               <DeleteOutlineOutlinedIcon onClick = {handleDelete}  style ={{cursor:'pointer'}}/>
@@ -132,4 +109,4 @@ const MedicineCategory = () => {
   );
 };
 
-export default MedicineCategory;
+export default StockReturn;

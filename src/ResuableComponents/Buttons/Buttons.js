@@ -21,11 +21,9 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-const Buttons = () => {
+const Buttons = ({handleSubmit}) => {
     const classes = useStyles();
-    const handleSubmit = () => {
-        alert('Medicine Added Successfully');
-}
+ 
     return (
         <div style ={{display : 'flex', justifyContent:'flex-end'}}>
         <Button className={classes.button} style ={{backgroundColor:'#252525'}}>Cancel</Button>

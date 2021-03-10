@@ -51,7 +51,8 @@ const SideBar = () => {
     return (
         <div style = {{ fontFamily:'MyFirstFont'}}>
           <div className = {classes.main}>
-            <h2 style ={{margin:'0', fontSize:'25px'}}>Dashboard</h2>
+            <Link style ={{textDecoration:'none', color:'inherit', }} to = "/dashboard"><h2 style ={{margin:'0', fontSize:'25px'}}>Dashboard</h2></Link>
+            
         </div>
             <ul className = {classes.forUl}>
             <Link style ={{textDecoration:'none', color:'inherit', }} to = '/dashboard'>
@@ -85,6 +86,22 @@ const SideBar = () => {
                 <Link style ={{textDecoration:'none', color:'inherit', }} to = '/add-medicine'> <li style={{padding:'5px 0'}} >Add Medicine</li> </Link>
                 <Link style ={{textDecoration:'none', color:'inherit', }} to = '/manage-med'> <li style={{padding:'5px 0'}} >Manage Medicine</li></Link>
                 <Link style ={{textDecoration:'none', color:'inherit', }} to = '/unit'><li style={{padding:'5px 0'}} >Unit</li></Link>
+                </ul>
+                <div className = {classes.midDiv}>
+                <Dashboard className = {classes.forImage}/>
+                <li className = {classes.forLi}>Purchase</li>
+                </div> <ul style ={{ listStyleType: 'none', fontFamily:'inherit'}}>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/add-purchase'> <li style={{padding:'5px 0'}} >Add Purchase</li> </Link>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/manage-purchase'> <li style={{padding:'5px 0'}} >Manage Purchase</li> </Link>
+                </ul>
+                <div className = {classes.midDiv}>
+                <Dashboard className = {classes.forImage}/>
+                <li className = {classes.forLi}>Return</li>
+                </div> <ul style ={{ listStyleType: 'none', fontFamily:'inherit'}}>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/return'> <li style={{padding:'5px 0'}} >Return</li> </Link>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/stock-return'> <li style={{padding:'5px 0'}} >Stock Return List</li> </Link>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/manufacturer-return'> <li style={{padding:'5px 0'}} >Manufacturer Return List</li></Link>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/waste-return'><li style={{padding:'5px 0'}} >Wastage Return List</li></Link>
                 </ul>
               <div className = {classes.midDiv}>
                 <Orders className = {classes.forImage}/>

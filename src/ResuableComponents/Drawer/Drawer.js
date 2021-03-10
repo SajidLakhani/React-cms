@@ -21,6 +21,12 @@ import AddMedicine from '../../components/Medicine/AddMedicine';
 import UnitTable from '../../components/Unit/UnitTable';
 import MedicineCategory from '../../components/Medicine/MedicineCategory/MedicineCategory';
 import ManageMedicine from '../../components/Medicine/ManageMedicine/ManageMedicine';
+import AddPurchase from '../../components/Purchase/AddPurchase/AddPurchase';
+import ManagePurchase from '../../components/Purchase/ManagePurchase/ManagePurchase';
+import Return from '../../components/Return/Return/Return';
+import StockReturn from '../../components/Return/StockReturn/StockReturn';
+import ManufacturerReturn from '../../components/Return/ManufacturerReturn/ManufacturerReturn';
+import WastageReturn from '../../components/Return/WastageReturn/WastageReturn';
 
 const drawerWidth = 260;
 
@@ -62,7 +68,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function SideDrawer({dashboard , stocklist , Addmedicine, unit, medCategory, manageMed }) {
+function SideDrawer({dashboard , stocklist , Addmedicine, unit, medCategory, manageMed , managePurchase , addPurchase,
+ normalReturn , manufacturerReturn , stockReturn , wastageReturn
+
+}) {
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -130,7 +139,11 @@ function SideDrawer({dashboard , stocklist , Addmedicine, unit, medCategory, man
       </nav>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        {dashboard ? <DashboardContent/> : stocklist ? <StockList/> : Addmedicine ? <AddMedicine/> : unit ? <UnitTable/> : medCategory ? <MedicineCategory/> : manageMed ? <ManageMedicine/> : <CreateUser/>}
+        {dashboard ? <DashboardContent/> : stocklist ? <StockList/> : Addmedicine ? <AddMedicine/> : unit ? <UnitTable/> : medCategory ? <MedicineCategory/> : manageMed ? <ManageMedicine/>
+         : addPurchase ? <AddPurchase/> : managePurchase ? <ManagePurchase/> 
+         : normalReturn ? <Return/> : stockReturn ? <StockReturn/> : manufacturerReturn ? <ManufacturerReturn/> : wastageReturn ? <WastageReturn/>
+         
+         : <CreateUser/>}
         <Footer/>
         
       </main>
