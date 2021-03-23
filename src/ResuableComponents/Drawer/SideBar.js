@@ -12,10 +12,13 @@ import {ReactComponent as Finance}from '../../assets/icons/finance.svg'
 import {ReactComponent as Activities}from '../../assets/icons/stackedfiles.svg'
 import { Link } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
+
 main:{
     backgroundColor: '#1f9de7',
     color: 'white',
     padding:'14px 55px',
+    /* width */
+
 },
 forUl:{
   padding: '10px 40px',
@@ -82,34 +85,42 @@ const SideBar = () => {
                 <Dashboard className = {classes.forImage}/>
                 <li className = {classes.forLi}>Medicine</li>
                 </div> <ul style ={{ listStyleType: 'none', fontFamily:'inherit'}}>
-                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/med-category'> <li style={{padding:'5px 0'}} >Category</li> </Link>
-                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/add-medicine'> <li style={{padding:'5px 0'}} >Add Medicine</li> </Link>
-                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/manage-med'> <li style={{padding:'5px 0'}} >Manage Medicine</li></Link>
-                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/unit'><li style={{padding:'5px 0'}} >Unit</li></Link>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/med-category'> <li style={{padding:'5px 0',fontSize:'12px'}} >Category</li> </Link>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/add-medicine'> <li style={{padding:'5px 0',fontSize:'12px'}} >Add Medicine</li> </Link>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/manage-med'> <li style={{padding:'5px 0',fontSize:'12px'}} >Manage Medicine</li></Link>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/unit'><li style={{padding:'5px 0',fontSize:'12px'}} >Unit</li></Link>
                 </ul>
                 <div className = {classes.midDiv}>
                 <Dashboard className = {classes.forImage}/>
                 <li className = {classes.forLi}>Purchase</li>
                 </div> <ul style ={{ listStyleType: 'none', fontFamily:'inherit'}}>
-                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/add-purchase'> <li style={{padding:'5px 0'}} >Add Purchase</li> </Link>
-                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/manage-purchase'> <li style={{padding:'5px 0'}} >Manage Purchase</li> </Link>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/add-purchase'> <li style={{padding:'5px 0',fontSize:'12px'}} >Add Purchase</li> </Link>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/manage-purchase'> <li style={{padding:'5px 0',fontSize:'12px'}} >Manage Purchase</li> </Link>
                 </ul>
                 <div className = {classes.midDiv}>
                 <Dashboard className = {classes.forImage}/>
                 <li className = {classes.forLi}>Return</li>
                 </div> <ul style ={{ listStyleType: 'none', fontFamily:'inherit'}}>
-                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/return'> <li style={{padding:'5px 0'}} >Return</li> </Link>
-                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/stock-return'> <li style={{padding:'5px 0'}} >Stock Return List</li> </Link>
-                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/manufacturer-return'> <li style={{padding:'5px 0'}} >Manufacturer Return List</li></Link>
-                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/waste-return'><li style={{padding:'5px 0'}} >Wastage Return List</li></Link>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/return'> <li style={{padding:'5px 0',fontSize:'12px'}} >Return</li> </Link>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/stock-return'> <li style={{padding:'5px 0',fontSize:'12px'}} >Stock Return List</li> </Link>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/manufacturer-return'> <li style={{padding:'5px 0',fontSize:'12px'}} >Manufacturer Return List</li></Link>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/waste-return'><li style={{padding:'5px 0',fontSize:'12px'}} >Wastage Return List</li></Link>
+                </ul>
+                <div className = {classes.midDiv}>
+                <Reports className = {classes.forImage}/>
+                <li className = {classes.forLi}>Reports</li>
+              </div><ul style ={{ listStyleType: 'none', fontFamily:'inherit'}}>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/closing'> <li style={{padding:'5px 0',fontSize:'12px'}} >Closing</li> </Link>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/closing-report'> <li style={{padding:'5px 0',fontSize:'12px'}} >Closing Report</li> </Link>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/today-report'> <li style={{padding:'5px 0',fontSize:'12px'}} >Todays Report</li></Link>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/sales-report'><li style={{padding:'5px 0',fontSize:'12px'}} >Sales Report</li></Link>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/purchase-report'> <li style={{padding:'5px 0',fontSize:'12px'}} >Purchase Report</li></Link>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/medicine-wise-report'><li style={{padding:'5px 0',fontSize:'12px'}} >Sales Report (Medicine Wise)</li></Link>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/profit-loss'><li style={{padding:'5px 0',fontSize:'12px'}} >Profit/Loss</li></Link>
                 </ul>
               <div className = {classes.midDiv}>
                 <Orders className = {classes.forImage}/>
                 <li className = {classes.forLi}>Orders</li>
-              </div>
-              <div className = {classes.midDiv}>
-                <Reports className = {classes.forImage}/>
-                <li className = {classes.forLi}>Reports</li>
               </div>
               <div className = {classes.midDiv}>
                 <Stock className = {classes.forImage}/>

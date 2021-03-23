@@ -27,6 +27,11 @@ import Return from '../../components/Return/Return/Return';
 import StockReturn from '../../components/Return/StockReturn/StockReturn';
 import ManufacturerReturn from '../../components/Return/ManufacturerReturn/ManufacturerReturn';
 import WastageReturn from '../../components/Return/WastageReturn/WastageReturn';
+import ClosingReport from '../../components/Report/ClosingReport/ClosingReport';
+import TodaysReport from '../../components/Report/TodaysReport/TodaysReport';
+import SalesReport from '../../components/Report/SalesReport/SalesReport';
+import PurchaseReport from '../../components/Report/PurchaseReport/PurchaseReport';
+import ReportMedicineWise from '../../components/Report/ReportMedicineWise/ReportMedicineWise';
 
 const drawerWidth = 260;
 
@@ -69,7 +74,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function SideDrawer({dashboard , stocklist , Addmedicine, unit, medCategory, manageMed , managePurchase , addPurchase,
- normalReturn , manufacturerReturn , stockReturn , wastageReturn
+ normalReturn , manufacturerReturn , stockReturn , wastageReturn, closingReport, todaysReport, salesReport,purchaseReport,
+ medicineWise
 
 }) {
   const classes = useStyles();
@@ -142,7 +148,8 @@ function SideDrawer({dashboard , stocklist , Addmedicine, unit, medCategory, man
         {dashboard ? <DashboardContent/> : stocklist ? <StockList/> : Addmedicine ? <AddMedicine/> : unit ? <UnitTable/> : medCategory ? <MedicineCategory/> : manageMed ? <ManageMedicine/>
          : addPurchase ? <AddPurchase/> : managePurchase ? <ManagePurchase/> 
          : normalReturn ? <Return/> : stockReturn ? <StockReturn/> : manufacturerReturn ? <ManufacturerReturn/> : wastageReturn ? <WastageReturn/>
-         
+         : closingReport ? <ClosingReport/> : todaysReport ? <TodaysReport/> : salesReport ? <SalesReport/> : purchaseReport ? <PurchaseReport/>
+         : medicineWise ? <ReportMedicineWise/>
          : <CreateUser/>}
         <Footer/>
         

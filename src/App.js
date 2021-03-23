@@ -19,6 +19,11 @@ import Return from "./components/Return/Return/index";
 import StockReturn from "./components/Return/StockReturn/index";
 import ManufacturerReturn from "./components/Return/ManufacturerReturn/index";
 import WastegaReturn from "./components/Return/WastageReturn/index";
+import ClosingReport from './components/Report/ClosingReport/index'
+import TodaysReport from './components/Report/TodaysReport/index'
+import SalesReport from './components/Report/SalesReport/index'
+import PurchaseReport from './components/Report/PurchaseReport/index'
+import ReportMedicineWise from './components/Report/ReportMedicineWise/index'
 function App() {
   return (
    
@@ -38,9 +43,15 @@ function App() {
       <Route  path="/stock-return" component={StockReturn} />
       <Route  path="/manufacturer-return" component={ManufacturerReturn} />
       <Route  path="/waste-return" component={WastegaReturn} />
+      <Route  path="/closing-report" component={ClosingReport} />
+      <Route  path="/today-report" component={TodaysReport} />
+      <Route  path="/sales-report" component={SalesReport} />
+      <Route  path="/purchase-report" component={PurchaseReport} />
+      <Route  path="/medicine-wise-report" component={ReportMedicineWise} />
       </Switch>
       </Router>
   );
 }
 
 export default App;
+
