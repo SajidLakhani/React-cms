@@ -32,6 +32,7 @@ import TodaysReport from '../../components/Report/TodaysReport/TodaysReport';
 import SalesReport from '../../components/Report/SalesReport/SalesReport';
 import PurchaseReport from '../../components/Report/PurchaseReport/PurchaseReport';
 import ReportMedicineWise from '../../components/Report/ReportMedicineWise/ReportMedicineWise';
+import ProductListing from '../../components/ProductListing/ProductListing';
 
 const drawerWidth = 260;
 
@@ -75,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
 
 function SideDrawer({dashboard , stocklist , Addmedicine, unit, medCategory, manageMed , managePurchase , addPurchase,
  normalReturn , manufacturerReturn , stockReturn , wastageReturn, closingReport, todaysReport, salesReport,purchaseReport,
- medicineWise
+ medicineWise, productlisting
 
 }) {
   const classes = useStyles();
@@ -149,7 +150,7 @@ function SideDrawer({dashboard , stocklist , Addmedicine, unit, medCategory, man
          : addPurchase ? <AddPurchase/> : managePurchase ? <ManagePurchase/> 
          : normalReturn ? <Return/> : stockReturn ? <StockReturn/> : manufacturerReturn ? <ManufacturerReturn/> : wastageReturn ? <WastageReturn/>
          : closingReport ? <ClosingReport/> : todaysReport ? <TodaysReport/> : salesReport ? <SalesReport/> : purchaseReport ? <PurchaseReport/>
-         : medicineWise ? <ReportMedicineWise/>
+         : medicineWise ? <ReportMedicineWise/> : productlisting ? <ProductListing/>
          : <CreateUser/>}
         <Footer/>
         

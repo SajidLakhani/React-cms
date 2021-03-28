@@ -24,6 +24,7 @@ import TodaysReport from './components/Report/TodaysReport/index'
 import SalesReport from './components/Report/SalesReport/index'
 import PurchaseReport from './components/Report/PurchaseReport/index'
 import ReportMedicineWise from './components/Report/ReportMedicineWise/index'
+import ProductListing from './components/ProductListing/index'
 function App() {
   return (
    
@@ -48,6 +49,7 @@ function App() {
       <Route  path="/sales-report" component={SalesReport} />
       <Route  path="/purchase-report" component={PurchaseReport} />
       <Route  path="/medicine-wise-report" component={ReportMedicineWise} />
+      <Route  path="/product-listing" component={ProductListing} />
       </Switch>
       </Router>
   );
