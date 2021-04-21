@@ -76,7 +76,7 @@ const StockList = () => {
  const classes = useStyles();
     return (
         <div className = {classes.main}>
-            <h1>Add Stocklist</h1>
+            <h1>Add Stockist</h1>
             <div className = {classes.midDiv}>
             <TextField className={`${classes.field} ${classes.forWidth}`} id="outlined-basic" placeholder = "Firm Name" type = "text" variant="outlined" />
             <TextField className={classes.field} style ={{width:'66%'}} id="outlined-basic" placeholder = "Address" type = "text" variant="outlined" />

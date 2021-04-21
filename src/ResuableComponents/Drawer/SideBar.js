@@ -8,9 +8,8 @@ import {ReactComponent as Orders}from '../../assets/icons/checklist.svg'
 import {ReactComponent as Reports}from '../../assets/icons/report.svg'
 import {ReactComponent as Stock}from '../../assets/icons/packages.svg'
 import {ReactComponent as Payment}from '../../assets/icons/creditcard.svg'
-import {ReactComponent as Finance}from '../../assets/icons/finance.svg'
-import {ReactComponent as Activities}from '../../assets/icons/stackedfiles.svg'
 import { Link } from 'react-router-dom';
+import RsmSideBar from './RsmSideBar';
 const useStyles = makeStyles((theme) => ({
 
 main:{
@@ -49,15 +48,18 @@ midDiv:{
 }
 }))
 
-const SideBar = () => {
+const SideBar = ({rsmDashboard}) => {
     const classes = useStyles();
     return (
         <div style = {{ fontFamily:'MyFirstFont'}}>
-          <div className = {classes.main}>
+          {rsmDashboard ? <div className = {classes.main}>
+            <Link style ={{textDecoration:'none', color:'inherit', }} to = "/rsm-dashboard"><h2 style ={{margin:'0', fontSize:'25px'}}>Dashboard</h2></Link>
+            
+        </div> : <div className = {classes.main}>
             <Link style ={{textDecoration:'none', color:'inherit', }} to = "/dashboard"><h2 style ={{margin:'0', fontSize:'25px'}}>Dashboard</h2></Link>
             
-        </div>
-            <ul className = {classes.forUl}>
+        </div> }
+        {rsmDashboard ? <RsmSideBar/> :  <ul className = {classes.forUl}>
             <Link style ={{textDecoration:'none', color:'inherit', }} to = '/dashboard'>
               <div className = {classes.midDiv}>
                 <Dashboard className = {classes.forImage}/>
@@ -77,7 +79,13 @@ const SideBar = () => {
               <Link style ={{textDecoration:'none', color:'inherit'}} to = '/stocklist'>
               <div className = {classes.midDiv}>
                 <StockList className = {classes.forImage}/>
-                <li className = {classes.forLi}>Stocklist</li>
+                <li className = {classes.forLi}>Stockist</li>
+              </div>
+              </Link>
+              <Link style ={{textDecoration:'none', color:'inherit', }} to = '/message'>
+              <div className = {classes.midDiv}>
+                <Dashboard className = {classes.forImage}/>
+                <li className = {classes.forLi}>Message</li>
               </div>
               </Link>
               <Link style ={{textDecoration:'none', color:'inherit'}} to = '/product-listing'>
@@ -124,27 +132,33 @@ const SideBar = () => {
                 <Link style ={{textDecoration:'none', color:'inherit', }} to = '/medicine-wise-report'><li style={{padding:'5px 0',fontSize:'12px'}} >Sales Report (Medicine Wise)</li></Link>
                 <Link style ={{textDecoration:'none', color:'inherit', }} to = '/profit-loss'><li style={{padding:'5px 0',fontSize:'12px'}} >Profit/Loss</li></Link>
                 </ul>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/orders'>
               <div className = {classes.midDiv}>
                 <Orders className = {classes.forImage}/>
                 <li className = {classes.forLi}>Orders</li>
               </div>
+              </Link>
               <div className = {classes.midDiv}>
                 <Stock className = {classes.forImage}/>
                 <li className = {classes.forLi}>Stock</li>
               </div>
               <div className = {classes.midDiv}>
+                <Reports className = {classes.forImage}/>
+                <li className = {classes.forLi}>Employee Report</li>
+              </div><ul style ={{ listStyleType: 'none', fontFamily:'inherit'}}>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/rsm-report'> <li style={{padding:'5px 0',fontSize:'12px'}} >RSM</li> </Link>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/asm-report'> <li style={{padding:'5px 0',fontSize:'12px'}} >ASM</li> </Link>
+                <Link style ={{textDecoration:'none', color:'inherit', }} to = '/mr-report'> <li style={{padding:'5px 0',fontSize:'12px'}} >MR</li> </Link>
+                </ul>
+              <Link style ={{textDecoration:'none', color:'inherit'}} to = '/payment'>
+              <div className = {classes.midDiv}>
                 <Payment className = {classes.forImage}/>
-                <li className = {classes.forLi}>Payment</li>
+                <li className = {classes.forLi}>Payment </li>
               </div>
-              <div className = {classes.midDiv}>
-                <Finance className = {classes.forImage}/>
-                <li className = {classes.forLi}>Finance</li>
-              </div>
-              <div className = {classes.midDiv}>
-                <Activities className = {classes.forImage}/>
-                <li className = {classes.forLi}>Activities</li>
-              </div>
-          </ul>
+              </Link>
+              
+          </ul> }
+           
         </div>
       
     );

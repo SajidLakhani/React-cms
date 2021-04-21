@@ -1,16 +1,12 @@
 import React from 'react';
-
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
-
 import Drawer from '@material-ui/core/Drawer';
 import SideBar from './SideBar'
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
-
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
-
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Header from './Header';
 import DashboardContent from '../../components/Dashboard/DashboardContent';
@@ -33,7 +29,18 @@ import SalesReport from '../../components/Report/SalesReport/SalesReport';
 import PurchaseReport from '../../components/Report/PurchaseReport/PurchaseReport';
 import ReportMedicineWise from '../../components/Report/ReportMedicineWise/ReportMedicineWise';
 import ProductListing from '../../components/ProductListing/ProductListing';
-
+import PaymentSetting from '../../components/PaymentSetting/PaymentSetting';
+import Rsm from '../../components/EmployeeReport/RSM/Rsm';
+import Asm from '../../components/EmployeeReport/ASM/Asm';
+import Mr from '../../components/EmployeeReport/MR/Mr';
+import Orders from '../../components/Orders/Orders';
+import Message from '../../components/Message/Message';
+import RSMDashBoard from '../../components/RSMDashboard/RSMDashBoard/RSMDashBoard';
+import ManagerReport from '../../components/RSMDashboard/ManagerReport/ManagerReport';
+import TourRsmWithAsm from '../../components/RSMDashboard/TourRsmWithAsm/TourRsmWithAsm'
+import GiftManagement from '../../components/RSMDashboard/GiftManagement/GiftManagement';
+import OrderManagement from '../../components/RSMDashboard/OrderManagement/OrderManagement';
+import DailyASMReport from '../../components/RSMDashboard/DailyASMReport/DailyASMReport';
 const drawerWidth = 260;
 
 const useStyles = makeStyles((theme) => ({
@@ -76,7 +83,8 @@ const useStyles = makeStyles((theme) => ({
 
 function SideDrawer({dashboard , stocklist , Addmedicine, unit, medCategory, manageMed , managePurchase , addPurchase,
  normalReturn , manufacturerReturn , stockReturn , wastageReturn, closingReport, todaysReport, salesReport,purchaseReport,
- medicineWise, productlisting
+ medicineWise, productlisting , payment , rsm , asm , mr , order , message , rsmDashboard, managerReport , tour , gift,
+ ordermanagement, ordersummary, dailyASMreport
 
 }) {
   const classes = useStyles();
@@ -89,7 +97,7 @@ function SideDrawer({dashboard , stocklist , Addmedicine, unit, medCategory, man
 
   const drawer = (
     <div>
-      <SideBar/>
+      <SideBar rsmDashboard = "true"/>
     </div>
   );
 
@@ -150,7 +158,9 @@ function SideDrawer({dashboard , stocklist , Addmedicine, unit, medCategory, man
          : addPurchase ? <AddPurchase/> : managePurchase ? <ManagePurchase/> 
          : normalReturn ? <Return/> : stockReturn ? <StockReturn/> : manufacturerReturn ? <ManufacturerReturn/> : wastageReturn ? <WastageReturn/>
          : closingReport ? <ClosingReport/> : todaysReport ? <TodaysReport/> : salesReport ? <SalesReport/> : purchaseReport ? <PurchaseReport/>
-         : medicineWise ? <ReportMedicineWise/> : productlisting ? <ProductListing/>
+         : medicineWise ? <ReportMedicineWise/> : productlisting ? <ProductListing/> : payment ? <PaymentSetting/> : rsm ? <Rsm/>
+         : asm ? <Asm/> : mr ? <Mr/> : order ? <Orders/> : message ? <Message/> : rsmDashboard ? <RSMDashBoard/> : managerReport ? <ManagerReport/> : tour ? <TourRsmWithAsm/> : gift ? <GiftManagement/>
+         : ordermanagement ? <OrderManagement/> :  dailyASMreport ? <DailyASMReport/>
          : <CreateUser/>}
         <Footer/>
         

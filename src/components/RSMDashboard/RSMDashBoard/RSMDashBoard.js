@@ -1,23 +1,23 @@
 import { Card, makeStyles } from '@material-ui/core'
 import React from 'react'
-import AddUser from '../../assets/icons/adduser.png'
-import Invoice from '../../assets/icons/invoice.png'
-import Stock from '../../assets/icons/stock.png'
-import List from '../../assets/icons/box.png'
-import Cmanagement from '../../assets/icons/stockist.png'
-import Payment from '../../assets/icons/wallet.png'
-import Employee from '../../assets/icons/check.png'
-import Orders from '../../assets/icons/orders.png'
-import Track from '../../assets/icons/track.png'
-import Message from '../../assets/icons/sms.png'
+import AddUser from '../../../assets/icons/adduser.png'
+import Invoice from '../../../assets/icons/invoice.png'
+import Stock from '../../../assets/icons/stock.png'
+import List from '../../../assets/icons/box.png'
+import Cmanagement from '../../../assets/icons/stockist.png'
+import Payment from '../../../assets/icons/wallet.png'
+import Employee from '../../../assets/icons/check.png'
+import Orders from '../../../assets/icons/orders.png'
+import Track from '../../../assets/icons/track.png'
+import Message from '../../../assets/icons/sms.png'
 import { Link } from 'react-router-dom'
 const useStyles = makeStyles((theme) => ({
     Main:{
         padding:'30px',
-        [theme.breakpoints.down('lg')]: {
+        [theme.breakpoints.up('md')]: {
             width:'70%'
           },
-          [theme.breakpoints.down('sm')]: {
+          [theme.breakpoints.down('md')]: {
             width:'100%'
           },
         width:'40%',
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 
     firstRowCard:{
         [theme.breakpoints.down('sm')]: {
-            width:'70% !important',
+            width:'90% !important',
             margin:'30px auto !important',
           },
         width:'32%',
@@ -61,64 +61,73 @@ const useStyles = makeStyles((theme) => ({
 
 }))
 
-function DashboardContent() {
+function RSMDashBoard() {
     const classes = useStyles();
     return (
         <div className = {classes.Main}>
-            <h1>Dashboard</h1>
+            <h1>RSM Dashboard</h1>
             <div className = {classes.midDiv}>
                
             <Card className = {classes.firstRowCard}>
                 <img className = {classes.forImg} src = {AddUser}/>
-                <p style ={{margin:'auto'}}>Create New Account</p>
+                <p style ={{margin:'auto'}}>Tour Program Of RSM with ASM</p>
             </Card>
             
             <Card className = {classes.firstRowCard}>
             <img className = {classes.forImg} src = {Invoice}/>
-                <p style ={{margin:'auto'}}>Generate New Invoice</p>
+                <p style ={{margin:'auto'}}>Gift Management</p>
             </Card>
             <Card className = {classes.firstRowCard}>
             <img className = {classes.forImg} src = {Stock}/>
-                <p style ={{margin:'auto'}}>Stock Management</p>
+                <p style ={{margin:'auto'}}>Order Management</p>
             </Card>
             </div>
             <div className = {classes.midDiv}>
             <Card className = {classes.firstRowCard}>
             <img className = {classes.forImg} src = {List}/>
-                <p style ={{margin:'auto'}}>Stockist Mangement</p>
+                <p style ={{margin:'auto'}}>Expense OF RSM</p>
             </Card>
             <Card className = {classes.firstRowCard}>
             <img className = {classes.forImg} src = {Cmanagement}/>
-                <p style ={{margin:'auto'}}>CNF Management</p>
+                <p style ={{margin:'auto'}}>Expense OF ASM</p>
             </Card>
             <Card className = {classes.firstRowCard}>
             <img className = {classes.forImg} src = {Payment}/>
-                <p style ={{margin:'auto'}}>Payment Settings</p>
+                <p style ={{margin:'auto'}}>Expense OF MR</p>
             </Card>
             </div>
             <div className = {classes.midDiv}>
             <Card className = {classes.firstRowCard} style ={{width:'65%'}}>
             <img className = {classes.forImg} src = {Employee} style ={{width:'20%'}} />
-                <p style ={{margin:'auto'}}>Employee Reports</p>
+                <p style ={{margin:'auto'}}>Tour Program Of ASM</p>
             </Card>
             <Card className = {classes.firstRowCard}>
             <img className = {classes.forImg} src = {Orders}/>
-                <p style ={{margin:'auto'}}>Orders</p>
+                <p style ={{margin:'auto'}}>Order Summary By ASM</p>
             </Card>
             </div>
             <div className = {classes.midDiv}>
             <Card className = {classes.firstRowCard} style ={{width:'48%'}}>
             <img className = {classes.forImg} src = {Track} style ={{width:'20%'}}/>
-                <p style ={{margin:'auto'}}>Track Location</p>
+                <p style ={{margin:'auto'}}>Remarks</p>
             </Card>
             <Card className = {classes.firstRowCard} style ={{width:'48%'}}>
             <img className = {classes.forImg} src = {Message} style ={{width:'20%'}}/>
-                <p style ={{margin:'auto'}}>Send Message</p>
+                <p style ={{margin:'auto'}}>Daily Report Of RSM</p>
             </Card>
             </div>
-            
+            <div className = {classes.midDiv}>   
+               <Card className = {classes.firstRowCard} style ={{width:'65%'}}>
+               <img className = {classes.forImg} src = {Invoice} style ={{width:'15%'}}/>
+                   <p style ={{margin:'auto' ,}}>Generate Notice For MR And ASM</p>
+               </Card>
+               <Card className = {classes.firstRowCard}>
+               <img className = {classes.forImg} src = {Stock}/>
+                   <p style ={{margin:'auto'}}>Daily Reporting Of ASM</p>
+               </Card>
+               </div>
         </div>
     )
 }
 
-export default DashboardContent
+export default RSMDashBoard
